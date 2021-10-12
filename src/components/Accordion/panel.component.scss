@@ -1,0 +1,54 @@
+@import '../../theme/variables.scss';
+
+.Panel {
+  
+  &__Header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5em 1em;
+    background-color: $greyXLight;
+    border-top: solid 1px $greyLight;
+    border-bottom: solid 1px $greyLight;
+    margin: -1px 0;
+    cursor: pointer;
+    user-select: none;
+    
+    h1 {
+      font-weight: initial;
+      font-size: 12pt;
+      padding: 0;
+      margin: 0;
+    }
+
+    &__Handle {
+      color: $title;
+      transition: .2s ease-in-out;
+    }
+  }
+
+  &__Content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .3s;
+    border-bottom: solid 1px $greyLight;
+
+    &__Wrapper {
+      padding: 2em 1em;
+    }
+  }
+
+  &--open {
+    .Panel__Header__Handle {
+      transform: scaleY(-1);
+    }
+
+    .Panel__Content {
+      max-height: 1200px;
+      overflow-y: scroll;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<div class="Panel" [ngClass]='{"Panel--open": open}'>
+  <div class="Panel__Header" (click)="togglePanel()">
+    <h1>{{title}}</h1>
+    <mat-icon class="Panel__Header__Handle">keyboard_arrow_down</mat-icon>
+  </div>
+  <div class="Panel__Content">
+    <div  class="Panel__Content__Wrapper">
+      <app-styled-content [html]="content"></app-styled-content>
+    </div>
+  </div>
+</div>

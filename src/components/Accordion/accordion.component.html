@@ -1,0 +1,10 @@
+<div class="Accordion">
+  <div class="Accordion__Panel" *ngFor="let section of sections">
+    <app-panel
+      [title]="section.title"
+      [content]="section.content"
+      [handleToggle]="autoCollapse ? toggleSection.bind(null, section) : undefined"
+      [open]="autoCollapse ? section === toggledSection : !!section.initiallyOpen">
+    </app-panel>
+  </div>
+</div>
